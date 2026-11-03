@@ -3,8 +3,8 @@
 """Write the list of WonderSwan translation patches at the top of README.md.
 
 The list comes from the catalog of https://github.com/mariovirgili/WonderSwan_bps_repo (index.json),
-which a crawler there updates every day. One row per release, newest first, with a link to the
-release; patches published as files in a repository get one row per repository, with its latest
+which a crawler there updates every day. Only the newest version of each translation from each
+author: one row per release, newest first, with a link to the release; patches published as files in a repository get one row per repository, with its latest
 files. Only the part of the
 README between the two markers below is rewritten.
 
@@ -39,7 +39,9 @@ def releases(catalog):
     """Catalog entries grouped by release (or by file, for files in a repository), newest first."""
     groups = {}
     for e in catalog.get('entries', []):
-        if e.get('duplicate_of'):
+        # Only the newest version of each translation from each author (the catalog's 'latest'); the
+        # same game translated by two authors keeps a row for each.
+        if e.get('duplicate_of') or not e.get('latest'):
             continue
         o = e.get('origin') or {}
         if o.get('kind') == 'release_asset':
@@ -49,8 +51,6 @@ def releases(catalog):
         else:
             # Files kept in a repository (no release): one row per repository, with its latest files,
             # dated by when the catalog first found the newest of them.
-            if not e.get('latest'):
-                continue
             key = o.get('source_url') or o.get('source')
             link, title = o.get('source_url'), f"{(o.get('source') or '').split('/')[-1]} (repository)"
             date = (e.get('first_seen') or '')[:10]
@@ -71,8 +71,9 @@ def table(catalog):
            '## WonderSwan translation patches — newest first',
            '',
            f'Every `.bps` / `.ips` WonderSwan translation patch found by [WonderSwan_bps_repo]({CATALOG_REPO}) '
-           f'(mariovirgili, PokemonGoDB, Gand46), catalog of {when}: {len(rows)} releases (Gand46 publishes his patches as files in '
-           'his repositories: one row per repository, with its latest files). '
+           f'(mariovirgili, PokemonGoDB, Gand46), catalog of {when}: the newest version of each translation, {len(rows)} releases. '
+           'A game translated by more than one author appears once for each. Gand46 publishes his patches as files in his '
+           'repositories: one row per repository, with its latest files. '
            'This list is updated automatically after each catalog update.',
            '',
            '| Date | Game | Release | Patch files | Language | Author |',
