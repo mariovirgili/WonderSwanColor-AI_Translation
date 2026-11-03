@@ -1,0 +1,42 @@
+name: Update the patch list in README
+
+# The list at the top of README.md comes from the catalog of mariovirgili/WonderSwan_bps_repo, whose
+# crawler runs every day at 04:17 UTC. This runs an hour later and three more times a day, and can be
+# started by hand (Actions -> Update the patch list in README -> Run workflow). README.md is committed
+# only when the list changed.
+on:
+  schedule:
+    - cron: '23 5,11,17,23 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/scripts/update_patch_list.py'
+      - '.github/workflows/patch-list.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: patch-list
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          lfs: false
+      - name: Write the list
+        run: python3 .github/scripts/update_patch_list.py README.md
+      - name: Commit README.md if it changed
+        run: |
+          if git diff --quiet -- README.md; then echo "No change"; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "README: patch list from WonderSwan_bps_repo"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
