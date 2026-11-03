@@ -76,8 +76,6 @@ See Release section
 
 You're welcome to check the translations and report any errors
 
-Looking for more translations? Take a look at https://github.com/PokemonGoDB/wonderswan-english-patches
-
 ## Play the translations in your browser
 
 **WonderSwan AI/MTL Tester:** https://mariovirgili.github.io/wonderswan-web/
