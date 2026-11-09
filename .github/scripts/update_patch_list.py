@@ -20,6 +20,8 @@ import urllib.request
 CATALOG_URL = 'https://raw.githubusercontent.com/mariovirgili/WonderSwan_bps_repo/main/index.json'
 CATALOG_REPO = 'https://github.com/mariovirgili/WonderSwan_bps_repo'
 START, END = '<!-- patch-list:start -->', '<!-- patch-list:end -->'
+# Name shown for a GitHub account in the Author column (the link still goes to the account's repository).
+AUTHOR_NAMES = {'pokemongodb': 'Cloogr'}
 LANGUAGES = {'en': 'English', 'es': 'Spanish', 'it': 'Italian', 'fr': 'French', 'de': 'German', 'pt': 'Portuguese', 'ja': 'Japanese'}
 
 
@@ -71,7 +73,7 @@ def table(catalog):
            '## WonderSwan translation patches — newest first',
            '',
            f'Every `.bps` / `.ips` WonderSwan translation patch found by [WonderSwan_bps_repo]({CATALOG_REPO}) '
-           f'(mariovirgili, PokemonGoDB, Gand46), catalog of {when}: the newest version of each translation, {len(rows)} releases. '
+           f'(mariovirgili, Cloogr, Gand46), catalog of {when}: the newest version of each translation, {len(rows)} releases. '
            'A game translated by more than one author appears once for each. Gand46 publishes his patches as files in his '
            'repositories: one row per repository, with its latest files. '
            'This list is updated automatically after each catalog update.',
@@ -81,7 +83,8 @@ def table(catalog):
     for g in rows:
         title = cell(g['title'])
         release = f"[{title}]({g['link']})" if g['link'] else title
-        author = f"[{cell(g['author'])}]({g['source_url']})" if g['source_url'] else cell(g['author'])
+        name = AUTHOR_NAMES.get(g['author'].lower(), g['author'])
+        author = f"[{cell(name)}]({g['source_url']})" if g['source_url'] else cell(name)
         out.append(f"| {g['date']} | {author} | {cell(' / '.join(g['games']))} | {release} | "
                    f"{cell(', '.join(g['files']))} | {cell(', '.join(g['languages']))} |")
     out.append(END)
