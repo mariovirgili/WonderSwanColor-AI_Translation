@@ -76,14 +76,14 @@ def table(catalog):
            'repositories: one row per repository, with its latest files. '
            'This list is updated automatically after each catalog update.',
            '',
-           '| Date | Game | Release | Patch files | Language | Author |',
+           '| Date | Author | Game | Release | Patch files | Language |',
            '| --- | --- | --- | --- | --- | --- |']
     for g in rows:
         title = cell(g['title'])
         release = f"[{title}]({g['link']})" if g['link'] else title
         author = f"[{cell(g['author'])}]({g['source_url']})" if g['source_url'] else cell(g['author'])
-        out.append(f"| {g['date']} | {cell(' / '.join(g['games']))} | {release} | {cell(', '.join(g['files']))} | "
-                   f"{cell(', '.join(g['languages']))} | {author} |")
+        out.append(f"| {g['date']} | {author} | {cell(' / '.join(g['games']))} | {release} | "
+                   f"{cell(', '.join(g['files']))} | {cell(', '.join(g['languages']))} |")
     out.append(END)
     return '\n'.join(out)
 
