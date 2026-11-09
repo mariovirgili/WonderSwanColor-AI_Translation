@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.png" alt="WonderSwan Translation Project" width="700"></p>
+
 # WonderSwanColor-AI_Translation
 Translations made by Claude - Opus 5.5
 
