@@ -103,6 +103,25 @@ See Release section
 
 You're welcome to check the translations and report any errors
 
+## Saint Seiya - Ougon Densetsu Hen - Perfect Edition: two translations
+
+Another English translation of this game already exists: **v1.0 by Retroviews** (AI-assisted, made with Codex), posted on RetroGameTalk with its download archive:
+https://retrogametalk.com/threads/saint-seiya-ougon-densetsuhen-perfect-edition-ai-assisted-translation.71478/
+
+The translation in this repository ([v0.9](https://github.com/mariovirgili/WonderSwanColor-AI_Translation/releases/tag/SaintSeiya_0.9)) was made by mistake: the Retroviews one was not listed in the Translations section or on The Repo, so it was not found before the work started. Both are available; pick the one you prefer.
+
+**Differences between the two versions**
+
+| | This repository (v0.9) | Retroviews (v1.0) |
+| --- | --- | --- |
+| Script coverage | About 2,040 lines in common, plus 172 lines translated only here | The same 2,040 lines, plus 22 lines translated only there (page 1:24) |
+| Wording | Independent translation; about 623 lines match the other one apart from punctuation | Independent translation |
+| Terms | Cloth, Rozan, Orphanage | Armor, Five Peaks, Star Children Academy |
+| Font | Narrow variable-width font with drop shadow, about 30 letters per line | Font derived from the original 8-pixel one |
+| Text display | Two lines per box, typed out letter by letter as in the original | Three lines per box, shown all at once |
+| Versions | Normal and ALL CAPS | One version |
+| Line length | Similar on average | Similar on average |
+
 ## Play the translations in your browser
 
 **WonderSwan AI/MTL Tester:** https://mariovirgili.github.io/wonderswan-web/
