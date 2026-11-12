@@ -6,10 +6,11 @@ Translations made by Claude - Opus 5.5
 <!-- patch-list:start -->
 ## WonderSwan translation patches — newest first
 
-Every `.bps` / `.ips` WonderSwan translation patch found by [WonderSwan_bps_repo](https://github.com/mariovirgili/WonderSwan_bps_repo) (mariovirgili, Cloogr, Gand46), catalog of 2026-11-12: the newest version of each translation, 91 releases. A game translated by more than one author appears once for each. Gand46 publishes his patches as files in his repositories: one row per repository, with its latest files. This list is updated automatically after each catalog update.
+Every `.bps` / `.ips` WonderSwan translation patch found by [WonderSwan_bps_repo](https://github.com/mariovirgili/WonderSwan_bps_repo) (mariovirgili, Cloogr, Gand46), catalog of 2026-11-12: the newest version of each translation, 92 releases. A game translated by more than one author appears once for each. Gand46 publishes his patches as files in his repositories: one row per repository, with its latest files. This list is updated automatically after each catalog update.
 
 | Date | Author | Game | Release | Patch files | Language |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-12 | [mariovirgili](https://github.com/mariovirgili/WonderSwanColor-AI_Translation) | Magical Drop for WonderSwan | [[Release] Magical Drop for WonderSwan - English v0.9](https://github.com/mariovirgili/WonderSwanColor-AI_Translation/releases/tag/MagicalDrop_0.9) | Magical.Drop.for.WonderSwan.EN.v0.9 | English |
 | 2026-11-12 | [Cloogr](https://github.com/PokemonGoDB/wonderswan-english-patches) | Digital Partner | [[Release] Digital Partner (WonderSwan) - AI English translation patch v1.8 (+ Long Words edition)](https://github.com/PokemonGoDB/wonderswan-english-patches/releases/tag/digital-partner-v1.8) | digital-partner-en-1.8, digital-partner-en-long-1.8 | English |
 | 2026-11-12 | [Cloogr](https://github.com/PokemonGoDB/wonderswan-english-patches) | Dicing Knight. | [[Release] Dicing Knight. (WonderSwan Color) - AI English translation patch v1.1](https://github.com/PokemonGoDB/wonderswan-english-patches/releases/tag/dicing-knight-v1.1) | dicing-knight-en-1.1 | English |
 | 2026-11-12 | [Cloogr](https://github.com/PokemonGoDB/wonderswan-english-patches) | Armored Unit | [[Release] Armored Unit (WonderSwan) - AI English translation patch v1.0](https://github.com/PokemonGoDB/wonderswan-english-patches/releases/tag/armored-unit-v1.0) | armored-unit-en-1.0 | English |
